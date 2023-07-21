@@ -1,4 +1,4 @@
-{"site_url":"https://unduly-great-cat.ngrok-free.app",
+{"site_url":"https://reliably-accurate-spider.ngrok-free.app",
 "site_title": "Команда Маршрут построен",
 "description": "Всегда готовы",
 "name": "Маршрут построен",

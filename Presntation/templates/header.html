@@ -1,9 +1,10 @@
 {% block header %}
   <!-- Хедер -->
   <header id="header">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <div class="container">
-      <h1><a href="{{ site_url }}">{{ name }}</a></h1>
-      <h2>{{ tag1 }}</h2>
+      <h1 class = "main-name"><a href="{{ site_url }}">{{ name }}</a></h1>
+      <h2 class = 'main-subname'>{{ tag1 }}</h2>
       <h2><span>{{ tag2 }}</span></h2>
 
       <nav id="navbar" class="navbar">
@@ -22,5 +23,9 @@
         <a href="{{ email }}" class="email"><i class="fa fa-envelope"></i></a>
       </div>
       </div>
+    <script>
+    const tl = gsap.timeline()
+
+    </script>
   </header><!-- Конец хедера -->    
 {% endblock %}
