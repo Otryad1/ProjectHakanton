@@ -1,4 +1,4 @@
-import telebot
-from telebot import types
+from aiogram import Bot
 
-bot = telebot.TeleBot('6366316287:AAHHlrBwRPmGowNRp1EtNynh7tWppfoa8CA')
+bot = Bot('6366316287:AAHHlrBwRPmGowNRp1EtNynh7tWppfoa8CA')
+url_web = 'http://piterv2shaga.whaile.ru'

@@ -1,24 +1,14 @@
-import telebot
-from telebot import types
-from settings import bot
+from settings import bot as bt, url_web
+from aiogram.types.web_app_info import WebAppInfo
+from aiogram import Dispatcher, executor, types
+
+bot = Dispatcher(bt)
 
 @bot.message_handler(commands=['start'])
-def lets_start(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton('Помощь')
-    markup.add(btn1)
-    bot.send_message(message.from_user.id, "👋 Привет! Я твой бот-помошник!", reply_markup=markup)
+async def lets_start(message: types.Message):
+    markup = types.ReplyKeyboardMarkup()
+    markup.add(types.KeyboardButton('Web app', web_app=WebAppInfo(url = url_web)))
+    await message.answer('Привет!', reply_markup=markup)
 
 
-@bot.message_handler(commands=['help'])
-def help(message):
-    bot.send_message(message.chat.id,'Привет, с чем нужна помощь')
-
-@bot.message_handler()
-def get_message(message):
-    match message.text:
-        case 'Помощь':
-            bot.send_message(message.chat.id,'Привет, с чем нужна помощь')
-
-
-bot.polling(none_stop=True, interval=0)
+executor.start_polling(bot)
